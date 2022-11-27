@@ -16,3 +16,4 @@ for lineage, add "BromiteWebview BromiteWebviewOverlay" in custom apps
 
 - https://github.com/arovlad/bromite-webview-overlay
 - https://github.com/bromite/bromite/releases/download/107.0.5304.114/arm64_SystemWebView.apk
+- https://github.com/bromite/bromite
