@@ -1,10 +1,9 @@
-# android_vendor_bromitewebview
+# Bromite System Webview
 
-arm64 / armv8
+This is a repositery hosting the make files and apk to successfully implement Bromite's System Webview in an arm64/armv8 android device ROM by using an overlay and adding the app to the system. I recommend using https://github.com/lineageos4microg/docker-lineage-cicd to build it.
 
-use it to build rom with bromite's webview
 
-in manifests -->
+To do this, add a repo manifest file to include this repository like so :
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
@@ -12,8 +11,15 @@ in manifests -->
 </manifest>
 ```
 
-for lineage, add "BromiteWebview BromiteWebviewOverlay" in custom apps
 
-- https://github.com/arovlad/bromite-webview-overlay
-- https://github.com/bromite/bromite/releases/download/107.0.5304.114/arm64_SystemWebView.apk
-- https://github.com/bromite/bromite
+If you are using the lineageos4microg Docker image, you need to add "BromiteWebview BromiteWebviewOverlay" in the custom apps environment variable in your docker-compose.yml file.
+Otherwise, you need to edit the "vendor/lineage/config/common.mk" file by adding :
+
+```yml
+$(call inherit-product-if-exists, vendor/bromite/app/BromiteWebview/Android.mk)
+$(call inherit-product-if-exists, vendor/bromite/product/overlay/BromiteWebviewOverlay/Android.mk)
+```
+# Credits
+
+* [Bromite](https://github.com/bromite/bromite) themselves
+* [arovlad/bromite-webview-overlay](https://github.com/arovlad/bromite-webview-overlay) for inspiration and examples I used
