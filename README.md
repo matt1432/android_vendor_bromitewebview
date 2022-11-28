@@ -4,7 +4,7 @@ This is a repositery hosting the make files and apk to successfully implement Br
 
 I recommend using [lineageos4microg/docker-lineage-cicd](https://github.com/lineageos4microg/docker-lineage-cicd) to build it.
 
-
+## Implementation
 To do this, add a repo manifest file to include this repository like so :
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -12,16 +12,23 @@ To do this, add a repo manifest file to include this repository like so :
 	  <project name="matt1432/android_vendor_bromitewebview" path="vendor/bromite" remote="github" revision="master" />
 </manifest>
 ```
-
-
+### \#1
 If you are using [lineageos4microg/docker-lineage-cicd](https://github.com/lineageos4microg/docker-lineage-cicd), you need to add `BromiteWebview BromiteWebviewOverlay` in the `CUSTOM_PACKAGES` environment variable in your docker-compose.yml file.
-TODO : sed command before.sh
 
-Otherwise, you need to edit the "vendor/lineage/config/common.mk" file by adding :
+### \#2
+If you don't want to make your `CUSTOM_PACKAGES` variable too long, you can make a `before.sh` script in the `/srv/userscripts` folder and add this line in it :
+
+```yml
+sed -i "1s;^;\$(call inherit-product-if-exists, vendor/bromite/bromite.mk)\n\n;" "/srv/src/LINEAGE_19_1/vendor/lineage/config/common.mk"
+```
+
+## Implementation without [lineageos4microg/docker-lineage-cicd](https://github.com/lineageos4microg/docker-lineage-cicd)
+You need to edit the "vendor/lineage/config/common.mk" file by adding :
 
 ```yml
 $(call inherit-product-if-exists, vendor/bromite/bromite.mk)
 ```
+
 # Credits
 
 * [Bromite](https://github.com/bromite/bromite) themselves
