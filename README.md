@@ -15,6 +15,7 @@ To do this, add a repo manifest file to include this repository like so :
 
 
 If you are using [lineageos4microg/docker-lineage-cicd](https://github.com/lineageos4microg/docker-lineage-cicd), you need to add `BromiteWebview BromiteWebviewOverlay` in the `CUSTOM_PACKAGES` environment variable in your docker-compose.yml file.
+TODO : sed command before.sh
 
 Otherwise, you need to edit the "vendor/lineage/config/common.mk" file by adding :
 
