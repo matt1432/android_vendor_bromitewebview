@@ -32,4 +32,5 @@ $(call inherit-product-if-exists, vendor/bromite/bromite.mk)
 # Credits
 
 * [Bromite](https://github.com/bromite/bromite) themselves
+* [Magisk-Module/open_webview](https://github.com/Magisk-Modules-Alt-Repo/open_webview) for overlay's AndroidManifest.xml
 * [arovlad/bromite-webview-overlay](https://github.com/arovlad/bromite-webview-overlay) for inspiration and examples I used
