@@ -1,6 +1,6 @@
 # Bromite System Webview
 
-This is a repositery hosting the make files and apk to successfully implement Bromite's System Webview in an arm64/armv8 android device ROM. It uses an overlay, adds the app to the system and removes AOSP's webview to do so. 
+This is a repositery hosting the make files and apk to successfully implement Bromite's System Webview in an ARM64/ARMv8 android device ROM. It uses an overlay, adds the app to the system and removes AOSP's webview to do so. 
 
 I recommend using [lineageos4microg/docker-lineage-cicd](https://github.com/lineageos4microg/docker-lineage-cicd) to build it.
 
