@@ -19,8 +19,9 @@ If you are using [lineageos4microg/docker-lineage-cicd](https://github.com/linea
 Otherwise, you need to edit the "vendor/lineage/config/common.mk" file by adding :
 
 ```yml
-$(call inherit-product-if-exists, vendor/bromite/app/BromiteWebview/Android.mk)
-$(call inherit-product-if-exists, vendor/bromite/product/overlay/BromiteWebviewOverlay/Android.mk)
+PRODUCT_PACKAGES += \
+    BromiteWebview \
+    BromiteWebviewOverlay
 ```
 # Credits
 
