@@ -38,11 +38,9 @@ def update_if_needed(module: str, release: ApkRelease):
 
 fdroid_main_repo = 'https://www.f-droid.org/repo'
 fdroid_microg_repo = 'https://microg.org/fdroid/repo'
+fdroid_bromite_repo = 'https://fdroid.bromite.org/fdroid/repo'
 
-update_if_needed('FakeStore', fdroid_recommended_release(fdroid_microg_repo, 'com.android.vending'))
-update_if_needed('FDroid', fdroid_recommended_release(fdroid_main_repo, 'org.fdroid.fdroid'))
-update_if_needed('FDroidPrivilegedExtension', fdroid_recommended_release(fdroid_main_repo, 'org.fdroid.fdroid.privileged'))
-update_if_needed('GmsCore', fdroid_recommended_release(fdroid_microg_repo, 'com.google.android.gms'))
-update_if_needed('GsfProxy', fdroid_recommended_release(fdroid_microg_repo, 'com.google.android.gsf'))
-update_if_needed('IchnaeaNlpBackend', fdroid_recommended_release(fdroid_main_repo, 'org.microg.nlp.backend.ichnaea'))
-update_if_needed('NominatimGeocoderBackend', fdroid_recommended_release(fdroid_main_repo, 'org.microg.nlp.backend.nominatim'))
+update_if_needed('BromiteWebview', fdroid_recommended_release(fdroid_bromite_repo, 'org.bromite.webview'))
+
+#update_if_needed('FakeStore', fdroid_recommended_release(fdroid_microg_repo, 'com.android.vending'))
+#update_if_needed('FDroid', fdroid_recommended_release(fdroid_main_repo, 'org.fdroid.fdroid'))
