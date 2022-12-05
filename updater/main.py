@@ -40,7 +40,7 @@ fdroid_main_repo = 'https://www.f-droid.org/repo'
 fdroid_microg_repo = 'https://microg.org/fdroid/repo'
 fdroid_bromite_repo = 'https://fdroid.bromite.org/fdroid/repo'
 
-update_if_needed('BromiteWebview', fdroid_recommended_release(fdroid_bromite_repo, 'org.bromite.webview'))
+update_if_needed('app/BromiteWebview', fdroid_recommended_release(fdroid_bromite_repo, 'org.bromite.webview'))
 
 #update_if_needed('FakeStore', fdroid_recommended_release(fdroid_microg_repo, 'com.android.vending'))
 #update_if_needed('FDroid', fdroid_recommended_release(fdroid_main_repo, 'org.fdroid.fdroid'))
