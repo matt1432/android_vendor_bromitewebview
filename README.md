@@ -22,6 +22,8 @@ If you don't want to make your `CUSTOM_PACKAGES` variable too long, you can make
 sed -i "1s;^;\$(call inherit-product-if-exists, vendor/bromite/bromite.mk)\n\n;" "/srv/src/LINEAGE_19_1/vendor/lineage/config/common.mk"
 ```
 
+TODO : add (cd "/srv/src/LINEAGE_19_1/vendor/bromite/" && git lfs pull)
+
 ## Implementation without [lineageos4microg/docker-lineage-cicd](https://github.com/lineageos4microg/docker-lineage-cicd)
 You need to edit the "vendor/lineage/config/common.mk" file by adding :
 
