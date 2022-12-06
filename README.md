@@ -12,24 +12,22 @@ To do this, add a repo manifest file to include this repository like so :
 	  <project name="matt1432/android_vendor_bromitewebview" path="vendor/bromite" remote="github" revision="master" />
 </manifest>
 ```
-### \#1
-If you are using [lineageos4microg/docker-lineage-cicd](https://github.com/lineageos4microg/docker-lineage-cicd), you need to add `BromiteWebview BromiteWebviewOverlay` in the `CUSTOM_PACKAGES` environment variable in your docker-compose.yml file.
-
-### \#2
-If you don't want to make your `CUSTOM_PACKAGES` variable too long, you can make a `before.sh` script in the `/srv/userscripts` folder and add this line in it :
+### With [lineageos4microg/docker-lineage-cicd](https://github.com/lineageos4microg/docker-lineage-cicd)
+You need to make a `before.sh` script in the `/srv/userscripts` [folder](https://github.com/lineageos4microg/docker-lineage-cicd#volumes) and add these lines in it :
 
 ```yml
 sed -i "1s;^;\$(call inherit-product-if-exists, vendor/bromite/bromite.mk)\n\n;" "/srv/src/LINEAGE_19_1/vendor/lineage/config/common.mk"
+(cd "/srv/src/LINEAGE_19_1/vendor/bromite/" && git lfs pull)
 ```
+No need to add anything to your `CUSTOM_PACKAGES` variable in your docker-compose.yml!
 
-TODO : add (cd "/srv/src/LINEAGE_19_1/vendor/bromite/" && git lfs pull)
-
-## Implementation without [lineageos4microg/docker-lineage-cicd](https://github.com/lineageos4microg/docker-lineage-cicd)
+## Without [lineageos4microg/docker-lineage-cicd](https://github.com/lineageos4microg/docker-lineage-cicd)
 You need to edit the "vendor/lineage/config/common.mk" file by adding :
 
 ```yml
 $(call inherit-product-if-exists, vendor/bromite/bromite.mk)
 ```
+and then `git lfs pull` inside the repository at `vendor/bromite` to have the APK
 
 # Credits
 
