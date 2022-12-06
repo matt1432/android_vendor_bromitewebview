@@ -21,7 +21,7 @@ sed -i "1s;^;\$(call inherit-product-if-exists, vendor/bromite/bromite.mk)\n\n;"
 ```
 No need to add anything to your `CUSTOM_PACKAGES` variable in your docker-compose.yml!
 
-## Without [lineageos4microg/docker-lineage-cicd](https://github.com/lineageos4microg/docker-lineage-cicd)
+### Without [lineageos4microg/docker-lineage-cicd](https://github.com/lineageos4microg/docker-lineage-cicd)
 You need to edit the "vendor/lineage/config/common.mk" file by adding :
 
 ```yml
