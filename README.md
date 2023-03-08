@@ -1,4 +1,4 @@
-# I have moved this repo to my personal Gitea, Because Bromite does not update the app anymore, I move to Mulch. [Link](https://git.nelim.org/matt1432/android_vendor_mulchwebview)
+# I have moved this repo to my personal Gitea. Bcause Bromite does not update the app anymore, I moved on to Mulch [Link](https://git.nelim.org/matt1432/android_vendor_mulchwebview)
 # Bromite System Webview
 
 This is a repositery hosting the make files and apk to successfully implement Bromite's System Webview in an ARM64/ARMv8 android device ROM. It uses an overlay, adds the app to the system and removes AOSP's webview to do so. 
